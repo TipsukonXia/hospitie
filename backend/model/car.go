@@ -7,12 +7,13 @@ import (
 )
 
 type Car struct {
-	ID           uint     `json:"id" gorm:"primaryKey"`
-	LicensePlate string   `json:"lisense_plate" gorm:"not null;unique;index"`
-	HospitieID   uint     `json:"hospitie_id"`
-	Hospitie     Hospitie `json:"hospitie" gorm:"constraint:OnUpdate:CASCADE,OnDelete:SET NULL;"`
-	Details      string   `json:"details"`
+	// ID           uint   `json:"id" gorm:"primaryKey"`
+	LicensePlate string `json:"lisense_plate" gorm:"primaryKey"`
+	Details      string `json:"details"`
+	HospitieID   uint
 	CreatedAt    time.Time
 	UpdatedAt    time.Time
 	DeletedAt    gorm.DeletedAt
+	// OwnerID      uint
+	// OwnerType    string
 }

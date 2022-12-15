@@ -2,13 +2,12 @@ package constant
 
 import (
 	"fmt"
+	"hospitie/core"
 	"os"
 	"sync"
 
 	"gorm.io/driver/mysql"
 	"gorm.io/gorm"
-
-	"hospitie/core"
 )
 
 var lock = &sync.Mutex{}

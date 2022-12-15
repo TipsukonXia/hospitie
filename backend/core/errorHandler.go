@@ -1,10 +1,11 @@
 package core
 
 import (
-	"fmt"
+	"net/http"
+
+	"github.com/labstack/echo/v4"
 )
 
-func ErrorHandler(err error) {
-	errMsg := fmt.Sprintf("error with %s", err)
-	print(errMsg)
+func ErrorHandler(err error) error {
+	return echo.NewHTTPError(http.StatusInternalServerError, err)
 }

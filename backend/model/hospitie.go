@@ -15,7 +15,7 @@ type Hospitie struct {
 	TelNo     string     `json:"tel_no" gorm:"size:15;not null;unique"`
 	Birthday  *time.Time `json:"birthday" gorm:"not null"`
 	Email     *string    `json:"email" gorm:"unique"`
-	Cars      []Car      `json:"cars" gorm:"not null"`
+	Cars      []Car      `json:"cars" gorm:"foreignKey:HospitieID;references:ID"`
 	CreatedAt time.Time
 	UpdatedAt time.Time
 	DeletedAt gorm.DeletedAt
